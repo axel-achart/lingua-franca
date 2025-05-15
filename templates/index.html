@@ -1,47 +1,56 @@
 <!DOCTYPE html>
-<html lang="fr">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lingua Franca Traduction</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Mini Google Translate</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
 <body>
     <header>
-        <h1><span class="title">Lingua Franca</span> Traduction</h1>
+        <div class="header-content">
+        <img src="{{ url_for('static', filename='a-logo-design-featuring-the-name-ark-axe_FDdIVrZVQeKN-i6747J-8g_1XggYpk8TjGIsivwAX9Fqg.jpeg') }}" alt="Logo" class="logo">
+        <h1>Lingua-Franca Translate</h1>
+    </div>
+        
     </header>
 
     <main>
-        <div class="lang-select">
-            <div class="left">
-                <span class="active">Détecter la langue</span>
-                <span class="active">Anglais</span>
-                <span class="active">Français</span>
-                <span class="active">Arabe</span>
-            </div>
-            <div class="right">
-                <span class="active">Français</span>
-                <span class="active">Anglais</span>
-                <span class="active">Arabe</span>
-            </div>
-        </div>
+        <div class="translator">
+            <div class="language-select">
+                <select id="sourceLang">
+                    <option value="auto">Detect language</option>
+                    <option value="fr">French</option>
+                    <option value="es">Spanish</option>
+                    <option value="de">German</option>
+                    <option value="en">English</option>
+                    <option value="ar">Arabic</option>
+                    <!-- Add more if needed -->
+                </select>
 
-        <div class="translation-boxes">
-            <textarea placeholder="Entrez du texte ici..."></textarea>
-            <div class="output">
-                <p>Traduction</p>
+                <button id="swapLangButton" type="button" title="Swap languages">↔</button>
+
+                <select id="targetLang">
+                    <option value="en" selected>English</option>
+                    <option value="fr">French</option>
+                    <option value="es">Spanish</option>
+                    <option value="de">German</option>
+                    <option value="ar">Arabic</option>
+                    <!-- Add more -->
+                </select>
             </div>
+
+            <div class="textareas">
+                <textarea id="inputText" placeholder="Que voulez-vous traduire..."></textarea>
+                <textarea id="outputText" placeholder="Traduction..." readonly></textarea>
+            </div>
+
+            <button onclick="translateText()">Traduire</button>
         </div>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
     </main>
 
     <footer>
-        <div class="foot">
-            <p>&copy; 2025 Copyright by Rayanne, Kylliann, Axel. Tout droits réservés.</p>
-        </div>
+        &copy; Copyright by: Axel & Rayanne & Kyllian. Tous droits réservés. 
     </footer>
-
 </body>
-
 </html>
