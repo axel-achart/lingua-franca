@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Lingua Franca</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Lingua Franca 🌍</h1>
+
+    <div class="translate-box">
+      <div class="input-section">
+        <select id="sourceLang">
+          <option value="auto">Détection automatique</option>
+          <option value="en">Anglais</option>
+          <option value="fr">Français</option>
+          <option value="es">Espagnol</option>
+        </select>
+        <textarea id="sourceText" placeholder="Entrez votre texte ici..."></textarea>
+      </div>
+
+      <div class="output-section">
+        <select id="targetLang">
+          <option value="en">Anglais</option>
+          <option value="fr">Français</option>
+          <option value="es">Espagnol</option>
+        </select>
+        <textarea id="translatedText" readonly placeholder="Traduction..."></textarea>
+      </div>
+    </div>
+
+    <button id="translateBtn">Traduire</button>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
