@@ -8,8 +8,8 @@
 <body>
     <header>
         <div class="header-content">
-        <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo" class="logo">
-        <h1>LINGUA FRANCA TRANSLATE</h1>
+            <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo" class="logo">
+            <h1>LINGUA FRANCA TRANSLATE</h1>
         </div>
     </header>
 
@@ -23,7 +23,6 @@
                     <option value="de">German</option>
                     <option value="en">English</option>
                     <option value="ar">Arabic</option>
-                    <!-- Add more if needed -->
                 </select>
 
                 <button id="swapLangButton" type="button" title="Swap languages">↔</button>
@@ -34,7 +33,6 @@
                     <option value="es">Spanish</option>
                     <option value="de">German</option>
                     <option value="ar">Arabic</option>
-                    <!-- Add more -->
                 </select>
             </div>
 
@@ -43,13 +41,14 @@
                 <textarea id="outputText" placeholder="Traduction..." readonly></textarea>
             </div>
 
-            <button onclick="translateText()">Traduire</button>
+            <button id="translateBtn" type="button">Traduire</button>
         </div>
-        <script src="{{ url_for('static', filename='script.js') }}"></script>
     </main>
 
     <footer>
-        &copy; 2025 Copyright by Axel & Rayanne & Kylliann. All rights reserved.
+        &copy; 2025 Axel, Rayanne & Kylliann. All rights reserved.
     </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

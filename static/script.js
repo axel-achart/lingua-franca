@@ -2,15 +2,35 @@ async function translateText() {
     const text = document.getElementById("inputText").value;
     const sl = document.getElementById("sourceLang").value;
     const tl = document.getElementById("targetLang").value;
+    const output = document.getElementById("outputText");
+    const button = document.getElementById("translateBtn");
 
-    const res = await fetch("/translate", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({ text, sl, tl })
-    });
+    if (!text.trim()) {
+        output.value = "";
+        return;
+    }
 
-    const data = await res.json();
-    document.getElementById("outputText").value = data.translation || data.error;
+    button.disabled = true;
+    button.textContent = "Traduction...";
+
+    try {
+        const res = await fetch("/translate", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ text, sl, tl })
+        });
+
+        if (!res.ok) throw new Error("Erreur HTTP");
+
+        const data = await res.json();
+        output.value = data.translation || data.error || "❌ Traduction échouée";
+    } catch (err) {
+        output.value = "❌ Erreur de communication avec le serveur.";
+        console.error("Erreur:", err);
+    } finally {
+        button.disabled = false;
+        button.textContent = "Traduire";
+    }
 }
 
 function swapLanguages() {
@@ -27,14 +47,10 @@ function swapLanguages() {
     // Swap text area contents
     const tempText = inputTextarea.value;
     inputTextarea.value = outputTextarea.value;
-    outputTextarea.value = tempText; // Clear output or keep swapped text?
-                                     // For now, keeping swapped text.
-                                     // If output should be cleared, use: outputTextarea.value = "";
+    outputTextarea.value = tempText;
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    const swapButton = document.getElementById("swapLangButton");
-    if (swapButton) {
-        swapButton.addEventListener("click", swapLanguages);
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById("swapLangButton")?.addEventListener("click", swapLanguages);
+    document.getElementById("translateBtn")?.addEventListener("click", translateText);
 });
