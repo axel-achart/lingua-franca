@@ -38,3 +38,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
         swapButton.addEventListener("click", swapLanguages);
     }
 });
+
+function playTranslation() {
+    const text = document.getElementById('outputText').value;
+    const targetLang = document.getElementById('targetLang').value;
+
+    if (!text) {
+        alert("Any text to speak !");
+        return;
+    }
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = targetLang;
+    speechSynthesis.speak(utterance);
+}

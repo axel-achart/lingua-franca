@@ -23,6 +23,15 @@
                     <option value="de">German</option>
                     <option value="en">English</option>
                     <option value="ar">Arabic</option>
+                    <option value="zh">Chinese</option>
+                    <option value="ja">Japanese</option>
+                    <option value="ru">Russian</option>
+                    <option value="pt">Portuguese</option>
+                    <option value="it">Italian</option>
+                    <option value="mfe">Morisien</option>
+                    <option value="tr">Turkish</option>
+                    <option value="vi">Vietnamese</option>
+                    <option value="pl">Polish</option>
                     <!-- Add more if needed -->
                 </select>
 
@@ -34,16 +43,26 @@
                     <option value="es">Spanish</option>
                     <option value="de">German</option>
                     <option value="ar">Arabic</option>
+                    <option value="zh">Chinese</option>
+                    <option value="ja">Japanese</option>
+                    <option value="ru">Russian</option>
+                    <option value="pt">Portuguese</option>
+                    <option value="it">Italian</option>
+                    <option value="mfe">Morisien</option>
+                    <option value="tr">Turkish</option>
+                    <option value="vi">Vietnamese</option>
+                    <option value="pl">Polish</option>
                     <!-- Add more -->
                 </select>
             </div>
 
             <div class="textareas">
-                <textarea id="inputText" placeholder="Que voulez-vous traduire..."></textarea>
-                <textarea id="outputText" placeholder="Traduction..." readonly></textarea>
+                <textarea id="inputText" placeholder="What do you want to translate..."></textarea>
+                <textarea id="outputText" placeholder="Translation..." readonly></textarea>
+                <button id="playAudioBtn" onclick="playTranslation()" title="Listen translation">🔊</button>
             </div>
 
-            <button onclick="translateText()">Traduire</button>
+            <button onclick="translateText()">Translate</button>
         </div>
         <script src="{{ url_for('static', filename='script.js') }}"></script>
     </main>
