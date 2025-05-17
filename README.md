@@ -1,88 +1,78 @@
 # 🌍 Lingua Franca Translate
 
-**Lingua Franca** est une application web de traduction multilingue rapide et intuitive, construite avec **Flask**, **JavaScript**, et une API gratuite non officielle de **Google Translate**.
+**Lingua Franca** is a fast and intuitive multilingual translation web application built with **Flask**, **JavaScript**, and an unofficial, free **Google Translate API**.
 
 ---
 
-## 🚀 Fonctionnalités
+## 🔧 Overview
 
-- ✅ Traduction instantanée entre plusieurs langues
-- 🧠 Détection automatique de la langue source
-- 🔄 Bouton pour inverser les langues et les textes
-- 💡 Interface responsive et facile à utiliser
-- 🌐 API sans clé (Google Translate – Chrome client)
+This project was developed as part of my academic training and aims to demonstrate how to build a web application that integrates a third-party API using **Flask** as a backend framework.
 
----
-
-## 📸 Aperçu
-
-![screenshot](static/screen_translator.jpg) <!-- À remplacer par une capture d'écran réelle -->
+The app enables users to:
+- Translate text between multiple languages
+- Swap source and target languages with one click
+- Hear the translated text via browser-based text-to-speech
+- Enjoy a clean, responsive, and interactive interface thanks to **HTML**, **CSS**, and **JavaScript**
 
 ---
 
-## 🛠️ Technologies utilisées
+## 🔁 How It Works
 
-- Python 3
-- Flask
-- HTML5, CSS3, JavaScript
-- API publique Google Translate (non officielle)
-
----
-
-## 📂 Structure du projet
-
-lingua-franca/
-├── app.py 
-├── requirements.txt
-├── .gitignore
-├── static/
-│ ├── style.css
-│ ├── script.js 
-│ └── logo.jpg 
-├── templates/
-│ └── index.html 
-
+1. The user enters text and selects the source and target languages.
+2. The text is sent from the frontend to the Flask backend.
+3. Flask communicates with the **Google Translate API**, passing the input text and language parameters.
+4. The API returns the translated text.
+5. Flask processes and returns the translation to the frontend.
+6. Optionally, the user can click the "speak" button to hear the translated text aloud.
 
 ---
 
-## ⚙️ Installation locale
+## 🧠 Technologies Used
 
-1. **Clone le projet**
+- **Python**
+- **Flask**: A lightweight Python web framework used to handle routing and server-side logic.
+- **Google Translate API**: A free and unofficial translation API used by Chrome. It enables programmatic access to Google’s translation service.
+- **HTML / CSS / JavaScript**: For building a responsive, user-friendly interface and adding interactive features.
 
-git clone https://github.com/tonprofil/lingua-franca.git
+> ⚠️ **Note:** This is an unofficial API and may stop working if Google decides to restrict it.
 
+---
+
+## 📸 Preview
+
+![screenshot](static/screen_translator.jpg)
+
+---
+
+## 📂 Project Structure
+
+lingua-franca/</br>
+├── app.py</br>
+├── requirements.txt</br>
+├── .gitignore</br>
+├── static/</br>
+│ ├── style.css</br>
+│ ├── script.js</br>
+│ └── logo.jpg</br>
+├── templates/</br>
+│ └── index.html
+
+---
+
+## ⚙️ Local Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/yourusername/lingua-franca.git
 cd lingua-franca
 
 python -m venv venv
 
-# Windows
+### Windows
 .\venv\Scripts\activate
-
-# macOS / Linux
+### macOS / Linux
 source venv/bin/activate
 
 pip install -r requirements.txt
 
-python app.py  
-
-Va sur :
-http://127.0.0.1:5000
-
-📥 API utilisée
-URL : https://clients5.google.com/translate_a/t
-Utilisée par le client Chrome pour Google Translate.
-⚠️ Cette API est non officielle : elle peut cesser de fonctionner si Google la restreint.
-
-👨‍💻 Auteurs
-Axel 
-
-Rayanne 
-
-Kylliann 
-
-📝 Licence
-Ce projet est open-source, à but éducatif uniquement.
-Utilisation commerciale interdite si API non officielle utilisée.
-
-
-
+python app.py
