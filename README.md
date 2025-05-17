@@ -32,15 +32,15 @@
 ## 📂 Structure du projet
 
 lingua-franca/
-├── app.py # Backend Flask
-├── requirements.txt # Dépendances Python
-├── .gitignore # Fichiers à ignorer par Git
+├── app.py 
+├── requirements.txt
+├── .gitignore
 ├── static/
-│ ├── style.css # Feuille de style
-│ ├── script.js # Code JS client
-│ └── logo.jpg # Logo (optionnel)
+│ ├── style.css
+│ ├── script.js 
+│ └── logo.jpg 
 ├── templates/
-│ └── index.html # Page principale
+│ └── index.html 
 
 
 ---
