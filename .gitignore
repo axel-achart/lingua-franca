@@ -1,0 +1,27 @@
+# Ne pas suivre l’environnement virtuel
+venv/
+
+# Fichiers Python compilés
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Fichiers système inutiles
+.DS_Store
+Thumbs.db
+
+# Fichiers de logs et de debuggage
+*.log
+
+# Fichiers IDE
+.vscode/
+.idea/
+
+# Variables d'environnement / secrets
+.env
+
+# Cache pip
+pip-log.txt
+
+# Jupyter (au cas où)
+.ipynb_checkpoints/
