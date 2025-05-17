@@ -1,6 +1,6 @@
 main {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5; /* Lighter grey background */
+    background-color: #e1e1e1; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +12,7 @@ main {
 
 footer {
     font-family: Arial, sans-serif;
-    background-color: #c9c2c2; /* Lighter grey background */
+    background-color: #ffffff; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,6 +25,7 @@ footer {
     display: flex;
     align-items: center;
     gap: 450px; /* espace entre logo et texte */
+    margin-bottom: 0.65rem;
 }
 
 .logo {
@@ -33,9 +34,9 @@ footer {
 }
 
 h1 {
-    color: blue;
+    color: rgb(69, 69, 251);
     font-family: Arial, sans-serif;
-    background-color: #c9c2c2; /* Lighter grey background */
+    background-color: #ffffff; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,7 +107,7 @@ h1 {
     padding: 12px 25px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #4285F4; /* Google-like blue */
+    background-color: rgb(69, 69, 251); /* Google-like blue */
     color: white;
     border: none;
     border-radius: 4px;
@@ -115,13 +116,5 @@ h1 {
 }
 
 .translator > button:hover {
-    background-color: #357ae8; /* Darker blue on hover */
+    background-color: rgb(57, 57, 252); /* Darker blue on hover */
 }
-
-/* Remove old styles that might conflict */
-/* 
-.container { ... } previous styles removed or merged into .translator 
-textarea { ... } previous general textarea styles refined in .textareas textarea 
-button { ... } previous general button styles refined for #swapLangButton and .translator > button 
-#result { ... } this ID is not in the HTML provided
-*/
